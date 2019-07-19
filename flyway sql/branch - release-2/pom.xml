@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.spring.mvc</groupId>
-	<artifactId>SpringMvcPagination</artifactId>
+	<artifactId>SpringMvcPagination2</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringMvcPagination Maven Webapp</name>
@@ -38,7 +38,39 @@
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
 	<build>
 		<finalName>${project.artifactId}</finalName>
 	</build>
+	<distributionManagement>
+		<!-- Publish the versioned releases here -->
+		<repository>
+			<id>nexus</id>
+			<name>nexus_release</name>
+			<url>http://192.168.56.201:8081/repository/r_release/
+			</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<!-- Publish the snapshot releases here -->
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>nexus_snap</name>
+			<url>http://192.168.56.201:8081/repository/r_snap/
+			</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
